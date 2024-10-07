@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Caprasimo&display=swap');
+
+*{padding: 0;margin: 0;box-sizing: border-box;}
+
+a{text-decoration: none;border: 0;outline: 0;color: inherit;}
+a:visited {color: inherit;}
+a:active {color: inherit;}
+a:hover {color: inherit;}
+
+button{background-color: transparent;border: 0;outline: 0;cursor: pointer;}
+
+input{border: 0;}
+
+img{object-fit: cover;}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF;
+  color: #222;
+  text-wrap: pretty;
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"slnt" 0;
+  font-size:1.275rem;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-left: solid 3px #333;
+}
+
+@media (max-width: 1200px) and (min-width: 560px) {body {display: none;}}
