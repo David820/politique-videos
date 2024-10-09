@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 
 const Layout = (props) => (
     <div className={css`width:100%;max-width:1300px;padding:8px 24px;margin:0 auto;
-      header{display:flex;align-items:center;justify-content:space-between;transition:400ms;a:hover{background-color:#EEE;transition:200ms;};nav>a{font-size:1.5rem;border:solid 1.5px currentColor;padding:0 8px;}}
+      header{display:flex;align-items:center;justify-content:space-between;transition:400ms;a:hover{background-color:#EEE;transition:200ms;}}
       footer{display:flex;align-items:center;justify-content:space-between;font-size:1rem;}
       @media (width <= 1200px) {
       header{padding:16px;flex-direction:column;gap:24px;}
