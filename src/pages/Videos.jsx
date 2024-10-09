@@ -1,9 +1,24 @@
-import { createSignal } from "solid-js";
+import { createSignal, lazy, Suspense } from "solid-js";
 import { css } from "@emotion/css";
 
+const VideoModal = lazy(() => import("../components/VideoModal")); 
+
+function debounce(fn, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+
 const Videos = () => {
-  const [currentVideo, setCurrentVideo] = createSignal(""); 
-  const [searchTerm, setSearchTerm] = createSignal(""); 
+  const [currentVideo, setCurrentVideo] = createSignal("");
+  const [searchTerm, setSearchTerm] = createSignal("");
+  const [debouncedSearch, setDebouncedSearch] = createSignal("");
+
+  const debouncedSetSearch = debounce((value) => {
+    setDebouncedSearch(value);
+  }, 300); 
 
   const videos = [
 
@@ -42,13 +57,14 @@ const Videos = () => {
   ];
 
   const filteredVideos = () => {
-    return videos.filter(video =>
-      video.title.toLowerCase().includes(searchTerm().toLowerCase())
+    return videos.filter((video) =>
+      video.title.toLowerCase().includes(debouncedSearch().toLowerCase())
     );
   };
 
   const resetSearch = () => {
     setSearchTerm("");
+    setDebouncedSearch("");
   };
 
   const blockScroll = () => {
@@ -68,6 +84,22 @@ const Videos = () => {
     setCurrentVideo("");
     enableScroll();
   };
+
+  const buttonStyle = css`
+    padding: 12px;
+    border: 1px solid #555;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    transition: 300ms;
+    &:hover {
+      transition: 200ms;
+      border: 1px solid tomato;
+      color: tomato;
+    }
+  `;
 
   return (
     <div>
@@ -89,44 +121,44 @@ const Videos = () => {
             type="text"
             placeholder="Rechercher une vidéo"
             value={searchTerm()}
-            onInput={(e) => setSearchTerm(e.target.value)}
+            onInput={(e) => {
+              setSearchTerm(e.target.value);
+              debouncedSetSearch(e.target.value);
+            }}
             className={css`
               padding: 11px;
               width: 320px;
               margin-right: 16px;
               border: 1px solid #555;
               border-radius: 4px;
-              outline:0;
-              font-size:18px;
-              &::placeholder{color:#999;font-size:16px;letter-spacing:1px;font-family: "Afacad Flux", sans-serif;font-weight:300;font-style:italic;}
-              `}
-              />
-          <button
-            onClick={resetSearch}
-            className={css`
-              padding: 12px;
-              border: 1px solid #555;
-              cursor: pointer;
-              border-radius: 4px;
-              font-size:16px;
-              color:#555;
-              font-weight:500;transition:300ms;
-              &:hover{transition:200ms;border: 1px solid tomato;color:tomato;}
+              outline: 0;
+              font-size: 18px;
+              &::placeholder {
+                color: #999;
+                font-size: 16px;
+                letter-spacing: 1px;
+                font-family: "Afacad Flux", sans-serif;
+                font-weight: 300;
+                font-style: italic;
+              }
             `}
-          >
+          />
+          <button onClick={resetSearch} className={buttonStyle}>
             X
           </button>
         </div>
 
-        <div className={css`
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:32px;
-            margin:80px auto 120px;
-            width:100%;
-            max-width:960px;  
-        `}>
+        <div
+          className={css`
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 80px auto 120px;
+            width: 100%;
+            max-width: 960px;
+          `}
+        >
           {filteredVideos().length > 0 ? (
             filteredVideos().map((video) => (
               <img
@@ -134,9 +166,15 @@ const Videos = () => {
                 alt={video.title}
                 title={video.title}
                 width={200}
+                loading="lazy" 
                 className={css`
-                  cursor: pointer;transition:300ms;
-                  &:hover{translate:0 -6px;scale:1.05;transition:200ms;}
+                  cursor: pointer;
+                  transition: 300ms;
+                  &:hover {
+                    translate: 0 -6px;
+                    scale: 1.05;
+                    transition: 200ms;
+                  }
                 `}
                 onClick={() => handleVideoClick(video.videoUrl)}
               />
@@ -145,8 +183,8 @@ const Videos = () => {
             <p
               className={css`
                 color: tomato;
-                font-size:24px;
-                font-weight:500;
+                font-size: 24px;
+                font-weight: 500;
               `}
             >
               Aucun résultat
@@ -155,52 +193,9 @@ const Videos = () => {
         </div>
 
         {currentVideo() && (
-          <div
-            className={css`
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background-color: #00000099;
-              display: grid;
-              place-content: center;
-              backdrop-filter: blur(8px);
-            `}
-          >
-            <button
-              onClick={closeIframe}
-              className={css`
-                position: absolute;
-                top: 16px;
-                right: 16px;
-                padding: 12px;
-                background-color: #999;
-                border: none;
-                cursor: pointer;
-                font-size: 20px;
-                font-weight:600;
-                z-index: 99;transition:300ms;
-                &:hover{background-color:#CCC;transition:200ms;}
-              `}
-            >
-              X
-            </button>
-
-            <iframe
-              src={currentVideo()}
-              className={css`
-                width: 880px;
-                height: 480px;
-                @media (width <= 1200px) {width:100%;max-width:560px;min-width:340px;height:auto;min-height:220px}              
-              `}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              title="YouTube Video"
-              referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy" 
-            />
-          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <VideoModal src={currentVideo()} onClose={closeIframe} />
+          </Suspense>
         )}
       </div>
     </div>

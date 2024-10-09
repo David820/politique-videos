@@ -17,6 +17,7 @@
   "dependencies": {
     "@emotion/css": "^11.13.4",
     "@solidjs/router": "^0.14.7",
+    "lodash": "^4.17.21",
     "solid-js": "^1.8.11"
   }
 }
