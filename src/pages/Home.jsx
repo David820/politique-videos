@@ -38,6 +38,7 @@ const Home = () =>
                 position:absolute;
                 bottom:0;
                 width:100%;
+                a{transition:300ms;&:hover {translate:0 -4px;transition:200ms;}}
                 @media (width <= 1200px) {position:unset;flex-direction:column;align-items:flex-start;}
                 `}>
                 <a href="/videos">Voir les vidéos</a>

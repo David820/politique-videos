@@ -86,18 +86,16 @@ const Videos = () => {
   };
 
   const buttonStyle = css`
-    padding: 12px;
-    border: 1px solid #555;
+    padding: 4px;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 24px;
     color: #555;
-    font-weight: 500;
+    font-weight: 600;
     transition: 300ms;
     &:hover {
       transition: 200ms;
-      border: 1px solid tomato;
-      color: tomato;
+      translate: 0 -4px;
     }
   `;
 
@@ -126,15 +124,15 @@ const Videos = () => {
               debouncedSetSearch(e.target.value);
             }}
             className={css`
-              padding: 11px;
-              width: 320px;
+              padding: 12px;
+              width:100%;
+              max-width: 320px;
               margin-right: 16px;
-              border: 1px solid #555;
               border-radius: 4px;
               outline: 0;
               font-size: 18px;
               &::placeholder {
-                color: #999;
+                color: #555;
                 font-size: 16px;
                 letter-spacing: 1px;
                 font-family: "Afacad Flux", sans-serif;
@@ -157,6 +155,8 @@ const Videos = () => {
             margin: 80px auto 120px;
             width: 100%;
             max-width: 960px;
+
+            @media (width <= 1200px) {margin: 56px 0 120px;}
           `}
         >
           {filteredVideos().length > 0 ? (
@@ -175,6 +175,8 @@ const Videos = () => {
                     scale: 1.05;
                     transition: 200ms;
                   }
+                  
+                  @media (width <= 1200px) {width:100%;max-width:400px;}
                 `}
                 onClick={() => handleVideoClick(video.videoUrl)}
               />

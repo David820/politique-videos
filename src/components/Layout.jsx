@@ -13,9 +13,6 @@ const Layout = (props) => (
         <h1 className={css`span:nth-of-type(1){color:#a04747;}span:nth-of-type(2){color:#3795bd;}`}>
           <a href="https://politiquefrance.fr/"><span>Politique</span> <span>France</span></a>
         </h1>
-        <nav className={css`display:flex;align-items:center;gap:24px;`}>
-          <a href="/videos">Vidéos</a>
-        </nav>
       </header>
       <main>{props.children}</main>
       <footer>©2024 Politique France</footer>

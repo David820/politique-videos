@@ -82,9 +82,7 @@ const VideoModal = (props) => {
             z-index: 10;
             transition: background-color 0.3s;
 
-            &:hover {
-              background-color: #CCC;
-            }
+            &:hover {background-color: #CCC;}
           `}
         >
           X
