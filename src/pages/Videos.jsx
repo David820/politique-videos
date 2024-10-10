@@ -102,16 +102,14 @@ const Videos = () => {
   };
 
   const buttonStyle = css`
-    padding: 4px;
+    padding: 8px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 24px;
+    font-size: 20px;
     color: #555;
-    font-weight: 600;
     transition: 300ms;
     &:hover {
       transition: 200ms;
-      translate: 0 -4px;
+      background-color:#BBBBBB55;
     }
   `;
 
@@ -143,7 +141,7 @@ const Videos = () => {
               padding: 12px;
               width:100%;
               max-width: 320px;
-              margin-right: 16px;
+              margin-right: 8px;
               border-radius: 4px;
               box-shadow: 1px 1px 8px #dbd3d2;
               outline: 0;
