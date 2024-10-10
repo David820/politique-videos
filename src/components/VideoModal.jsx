@@ -72,17 +72,10 @@ const VideoModal = (props) => {
             position: absolute;
             top: 16px;
             right: 16px;
-            padding: 8px 12px;
-            background-color: #FFFFFF99;
+            padding: 8px;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            z-index: 10;
-            transition: background-color 0.3s;
-
-            &:hover {background-color: #CCC;}
+            z-index: 99;
           `}
         >
           X
