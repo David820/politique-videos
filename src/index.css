@@ -27,7 +27,7 @@ body {
   font-size:1.275rem;
 }
 
-p,h2{text-align: justify;text-justify: auto;word-break: break-all;}
+p{text-align: justify;text-justify: auto;word-break: break-all;}
 
 ::-webkit-scrollbar {
   width: 12px;

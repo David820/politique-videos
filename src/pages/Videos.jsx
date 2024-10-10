@@ -22,25 +22,35 @@ const Videos = () => {
 
   const videos = [
 
+    { title: "Russie, Chine, Iran : La revanche des empires", imgSrc: "https://img.youtube.com/vi/V0Q9oikAAQM/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/V0Q9oikAAQM?si=FZJvBW2UyV2rbAgA&amp;controls=0" },
+    
     { title: "Création de l'État d'Israël", imgSrc: "https://img.youtube.com/vi/oOJvNxFiC4M/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/oOJvNxFiC4M?si=yrcRd90OBX3tGTkP&amp;controls=0" },
-
-    { title: "Mossad : l'histoire secrète d'Israël", imgSrc: "https://img.youtube.com/vi/1EFr3Y7eQMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/1EFr3Y7eQMA?si=5HLkJXf8R-RO6YAQ&amp;controls=0" },
-
+    
     { title: "La face cachée du recyclage", imgSrc: "https://img.youtube.com/vi/Iv9icf-0wJ4/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Iv9icf-0wJ4?si=iL1JVMlgrqT72hOu&amp;controls=0" },
-
+    
     { title: "Maastricht, 30 ans après", imgSrc: "https://img.youtube.com/vi/KlrIvPz5wDA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/KlrIvPz5wDA?si=3Wzq_TS4KpsahOau&amp;controls=0" },
-
+    
     { title: "Services publics, cash investigation", imgSrc: "https://img.youtube.com/vi/PyiSyO5J0bc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/PyiSyO5J0bc?si=2MgV8YIBZJgfESL5&amp;controls=0" },
-
+    
     { title: "L'épargne des Français : le scandale de l'argent caché", imgSrc: "https://img.youtube.com/vi/hpqhSsC6Suc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/hpqhSsC6Suc?si=HnpIF4W4NrKtI_8t&amp;controls=0" },
 
+    { title: "Gustave Eiffel a révolutionné la construction", imgSrc: "https://img.youtube.com/vi/4KzAPtrYe5U/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/4KzAPtrYe5U?si=78YUdw_8ItJr-K2F&amp;controls=0" },
+    
     { title: "Les enfants terrible de la gauche, parti socialiste", imgSrc: "https://img.youtube.com/vi/PDs9nmqQNkk/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/PDs9nmqQNkk?si=Yj2dWJNFLknyNWEw&amp;controls=0" },
+    
+    { title: "La bombe atomique", imgSrc: "https://img.youtube.com/vi/62vWvzTlur0/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/62vWvzTlur0?si=eB8IkO8D8qiO4z8B&amp;controls=0" },
 
-    { title: "Un virus s'est-il échappé du Laboratoire P4 de Wuhan ", imgSrc: "https://img.youtube.com/vi/EYpgcOz2OWs/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/EYpgcOz2OWs?si=LCJEgGJU1VnesKo7&amp;controls=0" },
-
+    { title: "Président de la république", imgSrc: "https://img.youtube.com/vi/Li8ha80JUec/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Li8ha80JUec?si=wFOWDqvkwkb_qJHc&amp;controls=0" },
+    
+    { title: "Mossad : l'histoire secrète d'Israël", imgSrc: "https://img.youtube.com/vi/1EFr3Y7eQMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/1EFr3Y7eQMA?si=5HLkJXf8R-RO6YAQ&amp;controls=0" },
+    
     { title: "L'Intérieur : Au coeur des crises", imgSrc: "https://img.youtube.com/vi/tTD9SAECPZ0/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/tTD9SAECPZ0?si=oGZuYNz7g6nxwx1S&amp;controls=0" },
-
+    
     { title: "Poutine et les présidents français", imgSrc: "https://img.youtube.com/vi/DgTkt4pUBcs/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/DgTkt4pUBcs?si=yiIT5kLRW4ez-SEt&amp;controls=0" },
+    
+    { title: "Les maîtres du monde : l'Europe face aux géants du numérique", imgSrc: "https://img.youtube.com/vi/XF1FJ-nptyc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/XF1FJ-nptyc?si=RjLEXiF_Fn5-9jcw&amp;controls=0" },
+
+    { title: "La fusion nucléaire, l'énergie du futur", imgSrc: "https://img.youtube.com/vi/Mf1mlRuGpqI/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Mf1mlRuGpqI?si=3Yr-ee5KvRUDR3Yz&amp;controls=0" },
 
     { title: "Nucléaire, un fiasco français", imgSrc: "https://img.youtube.com/vi/bYGoGoJe89Y/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/bYGoGoJe89Y?si=efnUNc41HWv-ICnj&amp;controls=0" },
 
@@ -50,7 +60,13 @@ const Videos = () => {
 
     { title: "ena", imgSrc: "https://img.youtube.com/vi/gjv15p9IBNE/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/gjv15p9IBNE?si=miU2IHaYSuCs6tac&amp;controls=0" },
 
-    { title: "Nos très chers députés : dans les coulisses de l'Assemblée nationale", imgSrc: "https://img.youtube.com/vi/c-9bfpoRA0U/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/c-9bfpoRA0U?si=XuSL_Rctq2PEWYs_&amp;controls=0" },
+    { title: "DSK, l'homme qui voulait tout", imgSrc: "https://img.youtube.com/vi/qh57qbryZMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/qh57qbryZMA?si=_JCgRc3p-byf4Fkg&amp;controls=0" },
+
+    { title: "Le Grand Paris Express", imgSrc: "https://img.youtube.com/vi/cXDXqNecfYM/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/cXDXqNecfYM?si=__ZzexjAvmlcaz6S&amp;controls=0" },
+
+    { title: "Les coulisses de l'assemblée nationale", imgSrc: "https://img.youtube.com/vi/t7X22Ax1gRo/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/t7X22Ax1gRo?si=xmEOzM7RxACMZHPe&amp;controls=0" },
+
+    { title: "La révolution verte des porte-conteneurs", imgSrc: "https://img.youtube.com/vi/1NxZMSonydw/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/1NxZMSonydw?si=of12gWp1U6wSG9Wz&amp;controls=0" },
 
     { title: "Opération Rubicon : espionnage à l'échelle mondiale", imgSrc: "https://img.youtube.com/vi/Wm1Vk90tUKw/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Wm1Vk90tUKw?si=4Uo8OsaO6b1adpgB&amp;controls=0" },
 
@@ -129,6 +145,7 @@ const Videos = () => {
               max-width: 320px;
               margin-right: 16px;
               border-radius: 4px;
+              box-shadow: 1px 1px 8px #dbd3d2;
               outline: 0;
               font-size: 18px;
               &::placeholder {

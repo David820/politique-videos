@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import imLdg from "../assets/img/ldgpge.webp";
-import imCmp from "../assets/img/cmpnt.webp";
+import imCmp from "../assets/img/cpnt.webp";
 import imGglchrm from "../assets/img/chrom.webp";
 import imYtbvdo from "../assets/img/ytb.webp";
 
@@ -17,7 +17,7 @@ const Home = () =>
         <img src={imLdg} width={240} />
     
         <div className={css`
-            width:100%;max-width:640px;display:flex;flex-direction:column;gap:32px;padding:0 16px;position:relative;
+            width:100%;max-width:720px;display:flex;flex-direction:column;gap:32px;padding:0 16px;position:relative;
             h2{font-size:48px;line-height:1;font-family:"Caprasimo";font-weight:100;}
             p{width:400px;}
             a{background:#68a0c1;padding:16px;color:white;}
