@@ -44,7 +44,7 @@ const Videos = () => {
     
     { title: "Mossad : l'histoire secrète d'Israël", imgSrc: "https://img.youtube.com/vi/1EFr3Y7eQMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/1EFr3Y7eQMA?si=5HLkJXf8R-RO6YAQ&amp;controls=0" },
     
-    { title: "L'Intérieur : Au coeur des crises", imgSrc: "https://img.youtube.com/vi/tTD9SAECPZ0/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/tTD9SAECPZ0?si=oGZuYNz7g6nxwx1S&amp;controls=0" },
+    { title: "Qui profite de nos impôts ?", imgSrc: "https://img.youtube.com/vi/tpXF3W-RkUA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/tpXF3W-RkUA?si=MdmfVEnIwqS3qYgd&amp;controls=0" },
     
     { title: "Poutine et les présidents français", imgSrc: "https://img.youtube.com/vi/DgTkt4pUBcs/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/DgTkt4pUBcs?si=yiIT5kLRW4ez-SEt&amp;controls=0" },
     
@@ -62,7 +62,7 @@ const Videos = () => {
 
     { title: "DSK, l'homme qui voulait tout", imgSrc: "https://img.youtube.com/vi/qh57qbryZMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/qh57qbryZMA?si=_JCgRc3p-byf4Fkg&amp;controls=0" },
 
-    { title: "Le Grand Paris Express", imgSrc: "https://img.youtube.com/vi/cXDXqNecfYM/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/cXDXqNecfYM?si=__ZzexjAvmlcaz6S&amp;controls=0" },
+    { title: "Valéry Giscard d'Estaing, l'homme qui voulait être aimé", imgSrc: "https://img.youtube.com/vi/zQdEGOYNjeQ/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/zQdEGOYNjeQ?si=KcFAHw5N3JMwUezG&amp;controls=0" },
 
     { title: "Les coulisses de l'assemblée nationale", imgSrc: "https://img.youtube.com/vi/t7X22Ax1gRo/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/t7X22Ax1gRo?si=xmEOzM7RxACMZHPe&amp;controls=0" },
 

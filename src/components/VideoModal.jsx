@@ -51,6 +51,7 @@ const VideoModal = (props) => {
           aspect-ratio: 16 / 9;
           background-color: #000;
           border-radius: 8px;
+          border:solid #000 2px;
           overflow: hidden;
 
           @media (max-width: 1200px) {
@@ -92,6 +93,7 @@ const VideoModal = (props) => {
           `}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           title="YouTube Video"
+          loading="lazy"
         ></iframe>
       </div>
     </div>
