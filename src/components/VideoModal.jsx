@@ -12,16 +12,7 @@ const VideoModal = (props) => {
     document.body.style.overflow = "";
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Escape") {
-      onClose();
-    }
-  };
-
-  document.addEventListener("keydown", handleKeyDown);
-
   onCleanup(() => {
-    document.removeEventListener("keydown", handleKeyDown);
     enableScroll();
   });
 
@@ -35,35 +26,20 @@ const VideoModal = (props) => {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #123;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1000;
-        backdrop-filter: blur(5px);
       `}
-      onClick={onClose} 
     >
       <div
         className={css`
-          width: 90%;
-          max-width: 880px;
+          width: clamp(340px,100%,880px);
           aspect-ratio: 16 / 9;
           background-color: #000;
-          border-radius: 8px;
           border:solid #000 2px;
           overflow: hidden;
-
-          @media (max-width: 1200px) {
-            width: 100%;
-            max-width: 560px;
-            aspect-ratio: 16 / 9;
-          }
-
-          @media (max-width: 600px) {
-            max-width: 340px;
-            aspect-ratio: 16 / 9;
-          }
         `}
         onClick={(e) => e.stopPropagation()} 
       >
@@ -72,8 +48,8 @@ const VideoModal = (props) => {
           className={css`
             position: absolute;
             top: 16px;
-            color:#EEE;
-            font-size:20px;
+            color:#DEF;
+            font-size:32px;
             right: 16px;
             padding: 8px;
             border: none;
@@ -81,7 +57,7 @@ const VideoModal = (props) => {
             z-index: 99;
           `}
         >
-          X
+          &times;
         </button>
 
         <iframe
