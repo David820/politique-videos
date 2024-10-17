@@ -30,9 +30,13 @@ const Videos = () => {
     
     { title: "Maastricht, 30 ans après", imgSrc: "https://img.youtube.com/vi/KlrIvPz5wDA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/KlrIvPz5wDA?si=3Wzq_TS4KpsahOau&amp;controls=0" },
     
+    { title: "Nicolas Sarkozy - Portrait d'un homme qui courait plus vite que son ombre", imgSrc: "https://img.youtube.com/vi/BTuPBlrSkqg/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/BTuPBlrSkqg?si=_vb2qNO_LQ_1Jopx&amp;controls=0" },
+    
     { title: "Services publics, cash investigation", imgSrc: "https://img.youtube.com/vi/PyiSyO5J0bc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/PyiSyO5J0bc?si=2MgV8YIBZJgfESL5&amp;controls=0" },
     
     { title: "L'épargne des Français : le scandale de l'argent caché", imgSrc: "https://img.youtube.com/vi/hpqhSsC6Suc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/hpqhSsC6Suc?si=HnpIF4W4NrKtI_8t&amp;controls=0" },
+
+    { title: "Le Système G, un documentaire incisif sur la politique Marseillaise", imgSrc: "https://img.youtube.com/vi/pIwJ-DZ3prA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/pIwJ-DZ3prA?si=WjVzeO_ZuYlG8OXt&amp;controls=0" },
 
     { title: "Gustave Eiffel a révolutionné la construction", imgSrc: "https://img.youtube.com/vi/4KzAPtrYe5U/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/4KzAPtrYe5U?si=78YUdw_8ItJr-K2F&amp;controls=0" },
     
@@ -49,8 +53,12 @@ const Videos = () => {
     { title: "Poutine et les présidents français", imgSrc: "https://img.youtube.com/vi/DgTkt4pUBcs/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/DgTkt4pUBcs?si=yiIT5kLRW4ez-SEt&amp;controls=0" },
     
     { title: "Les maîtres du monde : l'Europe face aux géants du numérique", imgSrc: "https://img.youtube.com/vi/XF1FJ-nptyc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/XF1FJ-nptyc?si=RjLEXiF_Fn5-9jcw&amp;controls=0" },
+    
+    { title: "Mitterrand et les secrets des gourous de l’Élysée", imgSrc: "https://img.youtube.com/vi/uzhizLoseBU/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/uzhizLoseBU?si=X6-Lp9Edp1rrERO_&amp;controls=0" },
 
     { title: "La fusion nucléaire, l'énergie du futur", imgSrc: "https://img.youtube.com/vi/Mf1mlRuGpqI/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Mf1mlRuGpqI?si=3Yr-ee5KvRUDR3Yz&amp;controls=0" },
+
+    { title: "Jacques Chirac, l'homme qui ne voulait pas être président", imgSrc: "https://img.youtube.com/vi/ZpqtDLZIR_Q/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/ZpqtDLZIR_Q?si=46I1orRFv_LPrrUV&amp;controls=0" },
 
     { title: "Nucléaire, un fiasco français", imgSrc: "https://img.youtube.com/vi/bYGoGoJe89Y/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/bYGoGoJe89Y?si=efnUNc41HWv-ICnj&amp;controls=0" },
 
