@@ -48,7 +48,7 @@ const VideoModal = (props) => {
           className={css`
             position: absolute;
             top: 16px;
-            color:#DEF;
+            color:#EDC;
             font-size:32px;
             right: 16px;
             padding: 8px;
