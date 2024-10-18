@@ -1,4 +1,4 @@
-import { createSignal, lazy, Suspense } from "solid-js";
+import { createSignal, lazy, Suspense, onCleanup } from "solid-js";
 import { css } from "@emotion/css";
 
 const VideoModal = lazy(() => import("../components/VideoModal")); 
@@ -15,13 +15,14 @@ const Videos = () => {
   const [currentVideo, setCurrentVideo] = createSignal("");
   const [searchTerm, setSearchTerm] = createSignal("");
   const [debouncedSearch, setDebouncedSearch] = createSignal("");
+  const [showScrollButton, setShowScrollButton] = createSignal(false);
 
   const debouncedSetSearch = debounce((value) => {
     setDebouncedSearch(value);
   }, 300); 
 
   const videos = [
-
+    
     { title: "Russie, Chine, Iran : La revanche des empires", imgSrc: "https://img.youtube.com/vi/V0Q9oikAAQM/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/V0Q9oikAAQM?si=FZJvBW2UyV2rbAgA&amp;controls=0" },
     
     { title: "Création de l'État d'Israël", imgSrc: "https://img.youtube.com/vi/oOJvNxFiC4M/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/oOJvNxFiC4M?si=yrcRd90OBX3tGTkP&amp;controls=0" },
@@ -54,6 +55,8 @@ const Videos = () => {
     
     { title: "Les maîtres du monde : l'Europe face aux géants du numérique", imgSrc: "https://img.youtube.com/vi/XF1FJ-nptyc/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/XF1FJ-nptyc?si=RjLEXiF_Fn5-9jcw&amp;controls=0" },
     
+    { title: "Comment fonctionnent les marchés financiers", imgSrc: "https://img.youtube.com/vi/PnkLIh_ZWYY/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/PnkLIh_ZWYY?si=BZrOH-GpbDLC4eKi&amp;controls=0" },
+    
     { title: "Mitterrand et les secrets des gourous de l’Élysée", imgSrc: "https://img.youtube.com/vi/uzhizLoseBU/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/uzhizLoseBU?si=X6-Lp9Edp1rrERO_&amp;controls=0" },
 
     { title: "La fusion nucléaire, l'énergie du futur", imgSrc: "https://img.youtube.com/vi/Mf1mlRuGpqI/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/Mf1mlRuGpqI?si=3Yr-ee5KvRUDR3Yz&amp;controls=0" },
@@ -63,10 +66,16 @@ const Videos = () => {
     { title: "Nucléaire, un fiasco français", imgSrc: "https://img.youtube.com/vi/bYGoGoJe89Y/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/bYGoGoJe89Y?si=efnUNc41HWv-ICnj&amp;controls=0" },
 
     { title: "Au cœur de la présidentielle", imgSrc: "https://img.youtube.com/vi/bySNCiODilE/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/bySNCiODilE?si=q2-VfTDxcEB4fDIZ&amp;controls=0" },
+    
+    { title: "La cinquième république", imgSrc: "https://img.youtube.com/vi/_lSA9NDbdNA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/_lSA9NDbdNA?si=jefIp4CLnCqS2rgL&amp;controls=0" },
 
     { title: "Macron, en marche vers l élysée", imgSrc: "https://img.youtube.com/vi/xaCxgo5r_xE/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/xaCxgo5r_xE?si=_fzJSAz8uV0NBeJ4&amp;controls=0" },
 
     { title: "ena", imgSrc: "https://img.youtube.com/vi/gjv15p9IBNE/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/gjv15p9IBNE?si=miU2IHaYSuCs6tac&amp;controls=0" },
+    
+    { title: "Votre santé, un trésor très convoité, gafam, médecine", imgSrc: "https://img.youtube.com/vi/rlVKHtOHIKo/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/rlVKHtOHIKo?si=ADdeeGj3fiRJMNE6&amp;controls=0" },
+    
+    { title: "Neuromarketing, votre cerveau les intéresse", imgSrc: "https://img.youtube.com/vi/7OqBkm2Pi6I/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/7OqBkm2Pi6I?si=TlCIWTRv0V-jFnbs&amp;controls=0" },
 
     { title: "DSK, l'homme qui voulait tout", imgSrc: "https://img.youtube.com/vi/qh57qbryZMA/hqdefault.jpg", videoUrl: "https://www.youtube.com/embed/qh57qbryZMA?si=_JCgRc3p-byf4Fkg&amp;controls=0" },
 
@@ -109,6 +118,19 @@ const Videos = () => {
     enableScroll();
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleScroll = () => {
+    setShowScrollButton(window.scrollY > 560);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  onCleanup(() => {
+    window.removeEventListener("scroll", handleScroll);
+  });
+
   const buttonStyle = css`
     padding: 8px;
     cursor: pointer;
@@ -117,7 +139,7 @@ const Videos = () => {
     transition: 300ms;
     &:hover {
       transition: 200ms;
-      background-color:#BBBBBB55;
+      background-color: #bbbbbb55;
     }
   `;
 
@@ -147,8 +169,8 @@ const Videos = () => {
             }}
             className={css`
               padding: 12px;
-              width:100%;
-              max-width: 320px;
+              width: 100%;
+              max-width: 300px;
               margin-right: 8px;
               border-radius: 4px;
               box-shadow: 1px 1px 8px #dbd3d2;
@@ -179,7 +201,9 @@ const Videos = () => {
             width: 100%;
             max-width: 960px;
 
-            @media (width <= 1200px) {margin: 56px 0 120px;}
+            @media (width <= 1200px) {
+              margin: 56px 0 120px;
+            }
           `}
         >
           {filteredVideos().length > 0 ? (
@@ -189,7 +213,7 @@ const Videos = () => {
                 alt={video.title}
                 title={video.title}
                 width={200}
-                loading="lazy" 
+                loading="lazy"
                 className={css`
                   cursor: pointer;
                   transition: 300ms;
@@ -198,8 +222,11 @@ const Videos = () => {
                     scale: 1.05;
                     transition: 200ms;
                   }
-                  
-                  @media (width <= 1200px) {width:100%;max-width:400px;}
+
+                  @media (width <= 1200px) {
+                    width: 100%;
+                    max-width: 400px;
+                  }
                 `}
                 onClick={() => handleVideoClick(video.videoUrl)}
               />
@@ -223,6 +250,26 @@ const Videos = () => {
           </Suspense>
         )}
       </div>
+
+      {showScrollButton() && (
+        <button
+          onClick={scrollToTop}
+          className={css`
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: ease background-color 300ms;
+            &:hover {background-color: #AAAAAA99;}
+
+            @media (width <= 1200px) {padding:12px;bottom:0;right:0;background-color:#FFFFFF99;&:hover {background-color:unset;}}
+          `}
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M15.15 21.375q-.575.275-1.15.063t-.85-.788l-3-6.45l-2.325 3.25q-.425.6-1.125.375t-.7-.95V4.05q0-.625.563-.9t1.062.125l10.1 7.95q.575.425.338 1.1T17.1 13h-4.2l2.975 6.375q.275.575.063 1.15t-.788.85"/></svg>
+        </button>
+      )}
     </div>
   );
 };
